@@ -1,0 +1,60 @@
+import machine
+import ubinascii
+
+DEBUG = True
+WATCHDOG_ENABLE = False
+
+# Device Info
+ESP_ID = ubinascii.hexlify(machine.unique_id()).decode('utf-8')
+MODEL = "SmrtCbd"
+
+
+# IR
+IR_PIN = 34
+
+# TEMPERATURE
+TEMPERATURE_PIN = 36
+
+# Buzzer
+BUZZER_PIN = 32
+
+# Button GPIOs
+POWER_BUTTON = 19
+SPEED_BUTTON = 35
+TIMER_BUTTON = 34
+TEST_BUTTON = 23
+FILTER_RESET = 18
+
+# Button
+BUTTON_TIMER_PERIOD = 1
+LONG_PRESS_TIME = 2
+LONG_LONG_PRESS_TIME = 6
+DEBOUNCE_TIME = 0.05
+
+# Timers
+BUTTON_TIMER = 1
+TIMED_MODE_TIMER = 2
+DIMMING_TIMER = 3
+
+# 7 Segment Display GPIOs
+SEGMENTED_DISPLAY_CLK = 21
+SEGMENTED_DISPLAY_DIO = 22
+
+
+# AC Motor
+SPEED_PINS = [13, 27, 25, 33, 26]
+SPEED_COUNT = len(SPEED_PINS)
+SWING_PIN = 14
+
+# Watchdog
+WD_TIMEOUT = (30 if DEBUG else 10) * 1000
+WD_STATE_FILE = "/state.json"
+
+# Connection Check Period Time
+CONN_CHECK_PERIOD_TIME = 15
+CONN_CHECK_ATTEMPTS = 2
+CONN_CHECK_PERIOD_TIME_LONG = 60
+
+SHIFT_REGISTER_SRK = 2
+SHIFT_REGISTER_SCK = 12
+SHIFT_REGISTER_SER = 23
